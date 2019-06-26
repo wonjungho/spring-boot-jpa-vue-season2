@@ -1,10 +1,12 @@
 <template>
 <div>
 <Nav></Nav>
-    <form class="form-horizontal" action='' method="POST">
+<div class="col-md-3"></div>
+<div class="col-md-6">
+    <form class="form-horizontal" action='' method="POST" >
   <fieldset>
-    <div id="legend">
-      <legend class="">Register</legend>
+    <div>
+      <h2>Register</h2>
     </div>
     <div class="control-group">
       <!-- Username -->
@@ -32,7 +34,6 @@
         <p class="help-block">Password should be at least 4 characters</p>
       </div>
     </div>
- 
     <div class="control-group">
       <!-- Password -->
       <label class="control-label"  for="password_confirm">Password (Confirm)</label>
@@ -48,8 +49,10 @@
         <button class="btn btn-success">Register</button>
       </div>
     </div>
+    <div class="col-md-3"></div>
   </fieldset>
 </form>
+</div>
 <Footer></Footer>
 </div>
 </template>
