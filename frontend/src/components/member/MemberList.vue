@@ -36,8 +36,8 @@
 </div>
 </template>
 <script>
-import Nav from '@/components/member/Nav.vue'
-import Footer from'@/components/member/Footer.vue'
+import Nav from '@/components/common/Nav.vue'
+import Footer from'@/components/common/Footer.vue'
 
 export default {
   components: {

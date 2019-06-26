@@ -11,7 +11,7 @@
       <input type="password" class="form-control" id="pwd" placeholder="Enter password">
     </div>
     <div class="checkbox">
-      <label><input type="checkbox"> Remember me</label>
+      <label><input type="checkbox"> Recommon me</label>
     </div>
     <button type="submit" class="btn btn-default">Submit</button>
   </form>
@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import Nav from '@/components/member/Nav.vue'
-import Footer from'@/components/member/Footer.vue'
+import Nav from '@/components/common/Nav.vue'
+import Footer from'@/components/common/Footer.vue'
 
 export default {
   components: {

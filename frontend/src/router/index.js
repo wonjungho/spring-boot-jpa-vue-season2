@@ -4,14 +4,14 @@ import Home from '@/components/Home'
 import Caculator from '@/components/basic/Caculator'
 import JoinForm from '@/components/member/JoinForm'
 import LoginForm from '@/components/member/LoginForm'
-import ListTable from '@/components/member/ListTable'
+import MemberList from '@/components/member/MemberList'
 
 Vue.use(Router)
 
 export default new Router({
   mode: 'history',
   routes: [
-    {path: '/listtable',name:'listtable',component:ListTable},
+    {path: '/memberlist',name:'memberlist',component:MemberList},
     {path: '/loginform', name: 'loginform', component: LoginForm},
     {path: '/', name: 'home', component: Home},
     {path: '/calculator', name: 'calculator', component: Caculator},
