@@ -11,6 +11,7 @@
       <li class="active"><router-link to="/">Home</router-link></li>
       <li><router-link to="/calculator">계산기</router-link></li>
       <li><router-link to="/memberlist">회원목록</router-link></li>
+      <li><router-link to="/chatbot">챗봇</router-link></li>
       <li><router-link to="/loginform">로그인</router-link></li>
       <li><router-link to="/joinform">회원가입</router-link></li>
     </ul>

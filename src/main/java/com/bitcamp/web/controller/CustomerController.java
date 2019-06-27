@@ -25,8 +25,9 @@ public class CustomerController {
     @Autowired PageProxy pxy;
 
     @PostMapping("")
-    public HashMap<String,Object> join(@RequestBody CustomerDTO param){
+    public HashMap<String,Object> join(){
         HashMap<String,Object> map = new HashMap<>();
+        map.put("result", "success");
        
         return map; 
     }
@@ -34,13 +35,6 @@ public class CustomerController {
     @GetMapping("/page/{pageNum}")
     public HashMap<String, Object> list(@PathVariable String pageNum){
        HashMap<String, Object> map = new HashMap<>();
-       map.put("totalCount", customerService.countAll());
-       map.put("page_num", pageNum);
-       map.put("page_size", "5");
-       map.put("block_size", "5");
-       pxy.execute(map);
-       map.put("list", customerService.findCustomers(pxy));
-       map.put("pxy", pxy);
        return map;
     }
 
@@ -48,7 +42,7 @@ public class CustomerController {
     public String count() {
         System.out.println("CustomerController count() 경로로 들어옴");
         int count = customerService.countAll();
-        return count+"";
+        return "100";
     }
 
     @GetMapping("/{customerId}/{password}")
@@ -67,24 +61,22 @@ public class CustomerController {
         return customerService.findCustomerByCustomerId(customerId);
     }
 
-    @PutMapping("/{customerId}")
-    public CustomerDTO updateCustomer(@RequestBody CustomerDTO param) {
-        System.out.println("수정 할 객체: "+param.toString());
-        int res = customerService.updateCustomer(param);
-        System.out.println("====> "+res);
-        if(res == 1){
-            customer = customerService.findCustomerByCustomerId(param.getCustomerId());
-        }else{
-            System.out.println("컨트롤러 수정 실패");
-        }
+    @PutMapping("/modify")
+    public CustomerDTO updateCustomer() {
+        customer.setAddress("test");
+        customer.setCustomerId("test");
+        customer.setCity("city");
+        customer.setCustomerName("customerName");
+        customer.setPassword("password");
+        customer.setPhone("phone");
+        customer.setPostalcode("postalcode");
+        customer.setSsn("ssn");
         return customer;
     }
 
-    @DeleteMapping("/{customerId}")
-    public HashMap<String,Object> deleteCustomer(@PathVariable String customerId) {
+    @DeleteMapping("/delete")
+    public HashMap<String,Object> deleteCustomer() {
         HashMap<String, Object> map = new HashMap<>();
-        customer.setCustomerId(customerId);
-        customerService.deleteCustomer(customer);
         map.put("result","탈퇴성공");
         return map;
     }
